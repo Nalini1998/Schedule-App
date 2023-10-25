@@ -1,0 +1,408 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<title>Schedule App</title>
+	<style>
+    
+		body {
+			background-color: #FFF8ff;
+			font-family: Monaco, monospace;
+      font-size: 16px;
+      font-weight: 400;
+		}
+		.container {
+			width: 70%;
+			border: 15px solid #4E342E;
+      border-radius: 20px;
+			padding: 5px;
+			margin: 60px auto;
+			text-align: center;
+			background-color: #E8F5E9EFEBE9;
+      box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+      background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath opacity=".5" d="M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z"/%3E%3Cpath d="M6 5V0H5v5H0v1h5v94h1V6h94V5H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+		}
+		.calendar {
+			border-collapse: collapse;
+			width: 100%;
+			table-layout: fixed;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border: 1px solid #3E2723;
+		}
+		.calendar td {
+			height: 80px;
+			border: 1px solid #8D6E63;
+			vertical-align: top;
+			padding: 10px;
+			text-align: left;
+      font-weight: 800;
+		}
+		.calendar th {
+			text-align: center;
+      background-color: #3E2723;
+      border-radius: 2px;
+      padding: 5px;
+      margin-top: 10px;
+      border: 2px solid;
+      font-weight: 900;
+      font-size: 16px;
+      color: #fff;
+		}
+		.current-month {
+			font-size: 18px;
+			display: inline-block;
+			margin-bottom: 10px;
+			margin-top: 15px;
+      color: #8B4513;
+      font-weight: 900;
+		}
+		.previous-month,
+		.next-month {
+			margin: 10px;
+			cursor: pointer;
+      color: #708090;
+		}
+		.add-task {
+			margin-top: 20px;
+			padding: 10px;
+			background-color: lightgray;
+			display: none;
+			background-color: #D2B48C;
+      border-radius: 10px;
+      box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+		.add-task label {
+			display: block;
+			text-align: left;
+			padding-top: 10px;
+      transition: width 10s;
+      transition-timing-function: ease-in-out;  
+		}
+    
+		.add-task input {
+			margin-top: 10px;
+			padding: 5px;
+			font-size: 16px;
+			width: 80%;
+		  background-color: #fff;
+      border-radius: 5px;
+      border: 1px solid white;
+		}
+    
+		.add-task button {
+      padding: 20px 20px;
+      background-color: #D2B48C;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: grabbing;
+      font-weight: bold;
+      align-items: center;
+      margin-top: 10px;
+		}
+    
+		.task {
+			background-color: #D2B48C;
+			margin-bottom: 5px;
+			padding: 5px;
+			border-radius: 5px;
+		}
+    
+     .task:hover {
+      background-color: white;
+    }
+    
+		.task input {
+			margin-bottom: 5px;
+			padding: 5px;
+			font-size: 16px;
+			width: 100%;
+		}
+		.task p {
+			margin-bottom: 5px;
+			font-size: 16px;
+      text-align: left;
+		}
+    
+		button {
+			padding: 6px 10px;
+			background-color: #D2B48C;
+			font-size: 16px;
+			cursor: grab;
+      font-weight: 900;
+      transition: width 2s linear 0.5s;
+      border-radius: 5px;
+      margin: 10px auto;
+		}
+    
+     button:hover {
+      width: 75px;
+    }
+    
+    img {
+      width: 15%;
+      float: left;
+      margin-left: 100px;
+      margin-top: 0px;
+    }
+    
+    h1 {
+      font-weight: 900;
+      font-size: 36px;
+      letter-spacing: 7px;
+    }
+    
+	</style>
+</head>
+<body>
+	<div class="container">
+  <div >
+    <img src="https://i.pinimg.com/originals/f2/e4/64/f2e46457ca91e902c01217fd5ffa6689.gif" alt="Schedule App" />
+  </div>
+    <h1 class="w3-center">Schedule App</h1>
+
+		<!-- Month and year selectors -->
+		<div>
+			<button class="previous-month" onclick="previousMonth()"><</button>
+			<h2 class="current-month"></h2>
+			<button class="next-month" onclick="nextMonth()">&gt;</button>
+		</div>
+
+		<!-- Calendar for displaying schedule -->
+		<table class="calendar">
+			<thead>
+				<tr>
+					<th>Sunday</th>
+					<th>Monday</th>
+					<th>Tuesday</th>
+					<th>Wednesday</th>
+					<th>Thursday</th>
+					<th>Friday</th>
+					<th>Saturday</th>
+				</tr>
+			</thead>
+			<tbody id="calendar-body">
+			</tbody>
+		</table>
+
+		<!-- Form for recording tasks -->
+		<div class="add-task">
+			<label for="task-name">Task Name:</label>
+			<input type="text" id="task-name">
+
+			<label for="due-date">Deadline:</label>
+			<input type="datetime-local" id="due-date"><br>
+
+			<br><label for="assignment">Assignment: 
+      <select id="assignment"><option>Nalini</option> <option>Austin</option> <option>Others</option> </select></label>
+
+			<br><label for="notes">Status:
+			<select id="notes" class="w3-center"><option>Planning</option> <option>Pending</option> <option>Reviewing</option> <option>Completed</option> <option>Others</option> </select></label>
+
+			<button onclick="addTask()" class="w3-block w3-hover-brown">Record</button>
+		</div>
+
+		<!-- Button for open adding tasks -->
+		<button onclick="showAddTaskForm()" class="w3-hover-black w3-hover-text-white">Add Task</button>
+
+		<!-- Task list for selected day -->
+		<div id="task-list"></div>
+
+		<script>
+			var today = new Date();
+			var selectedDate = new Date(today.getFullYear(), today.getMonth(), 1); // initialize with current month
+			var calendarBody = document.getElementById("calendar-body");
+			var taskList = document.getElementById("task-list");
+			var addTaskForm = document.querySelector(".add-task");
+			var taskNameInput = document.getElementById("task-name");
+			var dueDateInput = document.getElementById("due-date");
+			var assignmentInput = document.getElementById("assignment");
+			var notesInput = document.getElementById("notes");
+			var tasks = [];
+
+			// display calendar for selected month and year
+			displayCalendar(selectedDate);
+
+			// update table with events for selected month and year
+			function displayCalendar(date) {
+				// display current month and year
+				var currentMonth = monthName(date.getMonth());
+				var yearText = date.getFullYear().toString();
+				var currentMonthText = currentMonth + ' ' + yearText;
+				var currentMonthHeader = document.querySelector(".current-month");
+				currentMonthHeader.innerText = currentMonthText;
+
+				// remove previous calendar
+				calendarBody.innerHTML = '';
+
+				// create new calendar
+				var daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+				var firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+				var rows = Math.ceil((daysInMonth + firstDay) / 7);
+				var dayCounter = 1;
+				for (var i = 0; i < rows; i++) {
+					var row = document.createElement("tr");
+					for (var j = 0; j < 7; j++) {
+						var cell = document.createElement("td");
+						if (i === 0 && j < firstDay || dayCounter > daysInMonth) {
+							cell.innerText = '';
+						} else {
+							cell.innerText = dayCounter;
+							cell.id = "cell-" + dayCounter;
+							cell.addEventListener("click", function() {
+								selectDate(this);
+							});
+							dayCounter++;
+						}
+						row.appendChild(cell);
+					}
+					calendarBody.appendChild(row);
+				}
+			}
+
+			// get the name of the month
+			function monthName(monthNum) {
+				var months = [
+					'January', 'February', 'March', 'April',
+					'May', 'June', 'July', 'August', 'September',
+					'October', 'November', 'December'
+				];
+				return months[monthNum];
+			}
+
+			// select a date in the calendar
+			function selectDate(cell) {
+				// mark selected cell
+				var selectedCells = document.getElementsByClassName("selected-cell");
+				while (selectedCells.length > 0) {
+					selectedCells[0].classList.remove("selected-cell");
+				}
+				cell.classList.add("selected-cell");
+
+				// update task list for selected day
+				var selectedDate = new Date(
+					nextMonth() ? selectedDate.getFullYear() + 1 : selectedDate.getFullYear(),
+					nextMonth() ? 0 : selectedDate.getMonth(),
+					cell.innerText);
+				showTaskList(selectedDate);
+			}
+
+			// display task list for selected date
+			function showTaskList(date) {
+				taskList.innerHTML = '';
+
+				// display date heading
+				var taskListHeading = document.createElement("h3");
+				taskListHeading.innerText = date.toDateString();
+				taskList.appendChild(taskListHeading);
+
+				// display tasks for selected date
+				var tasks = getTasksForDate(date);
+				if (tasks.length === 0) {
+					var message = document.createElement("h4");
+					message.innerText = "None tasks for this day";
+					taskList.innerText = '';
+					taskList.appendChild(message);
+				} else {
+					for (var i = 0; i < tasks.length; i++) {
+						var task = tasks[i];
+						var taskDiv = document.createElement("div");
+						taskDiv.className = "task";
+						taskDiv.id = "task-" + task.id;
+						taskDiv.innerHTML = 
+							'<b>' + '<p>' + 'Task Name: '+ task.name + '<br>' + 'Deadline: ' + task.dueDate +  '<br>' + 'Assignment: '+ task.assignment + '<br>' + 'Status: ' + task.notes + '</p>' + '</b>' +
+							'<button onclick="deleteTask(' + task.id + ')">Remove</button>';
+						taskList.appendChild(taskDiv);
+					}
+				}
+			}
+
+			// get list of tasks for selected date
+			function getTasksForDate(date) {
+				var dateTasks = [];
+				for (var i = 0; i < tasks.length; i++) {
+					var task = tasks[i];
+					var taskDate = new Date(task.dueDate);
+					if (taskDate.getFullYear() == date.getFullYear() && taskDate.getMonth() == date.getMonth() && taskDate.getDate() == date.getDate()) {
+						dateTasks.push(task);
+					}
+				}
+				return dateTasks;
+			}
+
+			// add task to selected date
+			function addTask() {
+				var taskNameValue = taskNameInput.value;
+				var dueDateValue = dueDateInput.value;
+				var assignmentValue = assignmentInput.value;
+				var notesValue = notesInput.value;
+
+				if (taskNameValue === "" || dueDateValue === ""  || assignmentValue === "") {
+					alert("Task name, deadline and assignment are required!");
+					return;
+				}
+
+				var taskId = tasks.length + 1;
+				var newTask = {
+					id: taskId,
+					name: taskNameValue,
+					dueDate: dueDateValue,
+					assignment: assignmentValue,
+					notes: notesValue,
+					completed: false,
+				};
+				tasks.push(newTask);
+				showTaskList(new Date(newTask.dueDate));
+				addTaskForm.style.display = "none";
+			}
+
+			// update task status
+			function updateTask(taskId) {
+				var taskElement = document.getElementById("task-" + taskId);
+				var task = tasks.find(function(item) {
+					return item.id == taskId;
+				});
+				if (task != null) {
+					task.completed = !task.completed;
+					taskElement.getElementsByTagName("input")[0].checked = task.completed;
+				}
+			}
+
+			// delete task
+			function deleteTask(taskId) {
+				var taskIndex = tasks.findIndex(function(item) {
+					return item.id == taskId;
+				});
+				if (taskIndex >= 0) {
+					tasks.splice(taskIndex, 100);
+					showTaskList(new Date());
+				}
+			}
+
+			// show form for recording a new task
+			function showAddTaskForm() {
+				addTaskForm.style.display = "block";
+			}
+
+			// move forward one month
+			function nextMonth() {
+				selectedDate.setMonth(selectedDate.getMonth() + 1);
+				displayCalendar(selectedDate);
+			}
+
+			// move backward one month
+			function previousMonth() {
+				selectedDate.setMonth(selectedDate.getMonth() - 1);
+				displayCalendar(selectedDate);
+			}
+    </script>
+	</div>
+</body>
+</html>
