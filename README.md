@@ -1,12 +1,12 @@
 # Schedule App
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/Nalini1998/pen/YzRMKJm/f5a9d859d865a2c03e18aa37c9f4e0bc](https://codepen.io/Nalini1998/pen/YzRMKJm/f5a9d859d865a2c03e18aa37c9f4e0bc).
+A Pen created on CodePen.io. Original URL: [Click here](https://codepen.io/Nalini1998/live/YzRMKJm/f5a9d859d865a2c03e18aa37c9f4e0bc).
 
-## Schedule App
+## Preview
 
 A simple web application built with HTML, CSS, and JavaScript to help you manage your tasks and schedule.
 
-![Preview](https://i.imgur.com/dGJQegz.png)
+![Preview](https://assets.codepen.io/10602517/App_ScheduleApp.png)
 
 ## Features
 
@@ -33,7 +33,7 @@ A simple web application built with HTML, CSS, and JavaScript to help you manage
 
 ## Author
 
-- [INSERT YOUR NAME HERE]
+- [Nalini Vo](https://github.com/Nalini1998)
 
 ## License
 
